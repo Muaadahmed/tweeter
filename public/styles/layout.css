@@ -18,8 +18,43 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ nav span {
+  font-family: 'Bungee', cursive;
+ }
+
+.container {
+  width: 90%;
+  text-align: center;
+  background-color: #f4f1ec;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 1024px) {
+  .main-section {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 120px;
+  }
+
+  .main-header {
+    border: 5px solid;
+    margin: 0 auto;
+    max-width: 30%; 
+  }
+
+  .container {
+    margin-top: 80px;
+    max-width: 750px;
+    max-height: 500px;
+    align-self: center;
+  }
+
+}

@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  padding: 20px;
+}
+
+form > * {
+  margin-bottom: 20px;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+}
+
+form label {
+  align-self: flex-start;
+}
+
+form textarea {
+  border: none;
+  border-bottom: 3px solid;
+  background-color: #f4f1ec;
+  resize: none;
+  outline: none;
+}
+
+form button {
+  font-family: 'Bungee', cursive;
+  color: #f4f1ec;
+  background-color: #4056A1;
+  border: none;
+  padding: 5px 15px;
+}
+
+output {
+  font-family: 'Bungee', cursive;
+}
+
+article {
+  font-family: 'SourceSansPro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  padding: 30px;
+  margin: 0 auto;
+  text-align: center;
+  border: 3px solid #545149;
+  color: #545149;
+  margin-bottom: 20px;
+}
+
+article:hover {
+  box-shadow: 5px 7px 0 0 #c5c5c5;
+}
+
+article .first-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6em;
+}
+
+.first-footer ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.first-footer ul li {
+  text-align: center;
+  margin-right: 5px;
+}
+
+.first-footer ul li a {
+  color: #4056A1;
+}
+
+.first-footer ul li a:hover {
+  color: rgb(184, 138, 23);
+}
+
+
+article .first-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+}
+
+.smhand {
+  color: #c5c5c5;
+  align-self: center;
+}
+
+.main-tweet textarea {
+  outline: none;
+  border: none;
+  width: 100%;
+  border-bottom: 3px solid black;
+  background-color: #f4f1ec;
+  color: #77756f;
+  resize: none;
+  margin-top: 30px;
+  margin-bottom: 7px;
+}
+
+.first-header i {
+  display: flex;
+}
+
+.first-header i span {
+  margin-left: 15px;
+  align-self: center;
+}
+
+.tweet-label {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.tweet-label label {
+  margin-bottom: 10px;
+}
+
+.error-message {
+  display: none;
+  margin: 0 auto;
+  text-align: center;
+  width: 95%;
+  height: 50px;
+  color: red;
+  font-weight: 600;
+  background-color: #f4f1ec;
+  border: 3px solid red;
+  font-size: 0.9em;
+}
