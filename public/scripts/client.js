@@ -76,7 +76,8 @@ $(function() {
     }
 
     $('.error-message').slideUp();
-    loadTweets(renderTweets);
     $.post('/tweets', $('.create-tweet').serialize());
+    loadTweets(renderTweets);
+    $('#tweet-text').val("");
   });
 });

@@ -4,7 +4,7 @@ $(document).ready(() => {
   // Number turns red when it hits below 0.
 
   $('#tweet-text').on('input', function(event) {
-    const $counter = $(this).parent().siblings().children('.counter');
+    const $counter = $(this).siblings().children('.counter');
     const limit = 140;
     let inputLength = $(this).val().length;
     if ($counter.val() <= 0) {
