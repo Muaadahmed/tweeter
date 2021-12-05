@@ -48,12 +48,19 @@ const renderTweets = function(tweets) {
 };
 
 const loadTweets = function(renderTweet) {
-  $.get('/tweets', (data) => {
-    renderTweet(data);
-  });
+
+  // delay an extra 500 milisecond to account for the simulate-delay function
+
+  setTimeout(() => {
+    $.get('/tweets', (data) => {
+      console.log('fetch data', data);
+      renderTweet(data);
+    });
+  }, 500);
 };
 
-$(function() {
+$(document).ready(function() {
+  loadTweets(renderTweets);
 
   // Display tweet under compose tweet box
 
@@ -64,20 +71,27 @@ $(function() {
 
     if ($('#tweet-text').val() === '') {
       $('.error-message')[0].textContent = 'Please Enter Text!!!';
-      $('.error-message').slideDown();
+      $('.error-message').fadeIn(500);
+      setTimeout(()=> {
+        $('.error-message').fadeOut(500);
+      }, 1500);
       return;
     }
 
     // If input has more than 140 chars
     if ($('#tweet-text').val().length > 140) {
       $('.error-message')[0].textContent = 'Too Long, respect limit: 140';
-      $('.error-message').slideDown();
+      $('.error-message').fadeIn(500);
+      setTimeout(()=> {
+        $('.error-message').fadeOut(500);
+      }, 1500);
       return;
     }
-
-    $('.error-message').slideUp();
-    $.post('/tweets', $('.create-tweet').serialize());
-    loadTweets(renderTweets);
+    const $serializedValue = $('.create-tweet').serialize();
+    $.post('/tweets', $serializedValue)
+    .then(loadTweets(renderTweets))
+    .catch(err => console.log(err.message));
     $('#tweet-text').val("");
   });
+
 });
