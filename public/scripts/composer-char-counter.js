@@ -8,9 +8,11 @@ $(document).ready(() => {
     const limit = 140;
     let inputLength = $(this).val().length;
     if ($counter.val() <= 0) {
-      $counter[0].style.color = 'red';
+      $counter.removeClass("defaultColor");
+      $counter.addClass("changeColor");
     } else {
-      $counter[0].style.color = '#545149';
+      $counter.removeClass("changeColor");
+      $counter.addClass("defaultColor");
     }
     $counter.val(limit - inputLength);
   });

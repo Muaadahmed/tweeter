@@ -53,7 +53,6 @@ const loadTweets = function(renderTweet) {
 
   setTimeout(() => {
     $.get('/tweets', (data) => {
-      console.log('fetch data', data);
       renderTweet(data);
     });
   }, 500);
@@ -87,6 +86,9 @@ $(document).ready(function() {
       }, 1500);
       return;
     }
+
+    // fetch data from /tweets and render it under tweets box
+
     const $serializedValue = $('.create-tweet').serialize();
     $.post('/tweets', $serializedValue)
     .then(loadTweets(renderTweets))
